@@ -1,0 +1,6 @@
+{
+  "generator-mocha": {},
+  "generator-cg-angular": {
+    "uirouter": true
+  }
+}

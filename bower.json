@@ -1,0 +1,13 @@
+{
+  "name": "tshop",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "materialize": "~0.97.0",
+    "gsap": "~1.17.0"
+  },
+  "devDependencies": {
+    "chai": "~3.2.0",
+    "mocha": "~2.2.5"
+  }
+}

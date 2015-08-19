@@ -1,0 +1,48 @@
+body {
+    background-color: #ddd;    
+}
+
+header nav {
+    position: absolute; 
+    width:100%; 
+    z-index: -1; 
+    top: 0; 
+    left:0; 
+    height:150px;
+}
+
+.container {
+    position: relative;
+    top: 60px;
+}
+
+.light {
+	font-weight: 200;
+	font-size: 125%;	
+}
+
+#carrito {
+    bottom: 25px; 
+    right: 24px;    
+    display : none;
+}
+
+.card .card-title {
+    color : black;
+}
+
+.card.articulo .card-content p {
+    height : 2em;
+}
+
+@media (min-width: 992px) {
+    nav .brand-logo {
+        
+        font-size: 3em;        
+    }
+    
+    .container {
+        top: 75px;
+    }
+
+}

@@ -24,7 +24,42 @@ header nav {
 #carrito {
     bottom: 25px; 
     right: 24px;    
+    display : xnone;
+}
+
+#carrito.expandido {
+    top : 5%;
+    left : 5%;
+    width: 90%;
+}
+
+
+#carrito a {
+    right : 0;
+    bottom: 0;
+}
+
+#carrito.expandido a {
+    position: absolute;
+    display : block;
+    width: 100%;
+    height: 100%;
+    border-radius : 0;
+}
+
+#carrito.expandido a.expandido {
     display : none;
+}
+
+#carrito form {
+    display : none;
+    padding : 1em;
+}
+
+#carrito.expandido form.expandido {
+    display: block;
+    width : 100%;
+    transition : all 0.5s;
 }
 
 .card .card-title {

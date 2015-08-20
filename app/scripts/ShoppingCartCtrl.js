@@ -4,7 +4,14 @@ var ShoppingCartCtrl = function(carrito) {
 };
 
 ShoppingCartCtrl.prototype.inicializar = function() {
-    this.carrito.onRegistrarCompra(function(articulo) {
+    this.$elem.find('a').click(function(evt) {
+        evt.preventDefault();
+        this.expandir();
+    }.bind(this));
+    this.$elem.find('button').click(function(evt) {
+        evt.preventDefault();
+        this.compactar();
+    }.bind(this));    this.carrito.onRegistrarCompra(function(articulo) {
         if (this.carrito.numeroArticulos() === 1) {
             this.mostrar();
         } else {
@@ -31,3 +38,18 @@ ShoppingCartCtrl.prototype.ocultar = function() {
 ShoppingCartCtrl.prototype.actualizar = function() {
     
 };
+
+ShoppingCartCtrl.prototype.expandir = function() {
+    this.$elem.addClass('expandido');
+    this.$elem.one('transitionend', function() {
+        $(this).find('a').addClass('expandido');
+        $(this).find('form').addClass('expandido');
+    });
+};
+
+ShoppingCartCtrl.prototype.compactar = function() {
+    this.$elem.find('a').removeClass('expandido');
+    this.$elem.find('form').removeClass('expandido');
+    this.$elem.removeClass('expandido');
+};
+

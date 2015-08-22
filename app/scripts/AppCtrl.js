@@ -1,7 +1,7 @@
 var AppCtrl = function(catalogo, carrito) {
     this.catalogo = catalogo;
     this.carrito = carrito;
-    this.$elem = $('.row');
+    this.$elem = $('#tarjetas');
 };
 
 AppCtrl.prototype.inicializar = function() {

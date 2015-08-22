@@ -47,26 +47,18 @@ header nav {
     border-radius : 0;
 }
 
-#carrito.expandido a.expandido {
-    display : none;
-}
-
-#carrito form {
-    display : none;
+.shoppingCartForm {
+    position: absolute;
     padding : 1em;
+    z-index : 1000;
 }
 
-#carrito.expandido form.expandido {
-    display: block;
-    width : 100%;
-    transition : all 0.5s;
-}
 
 .card .card-title {
     color : black;
 }
 
-.card.articulo .card-content p {
+.card.tarjetaArticulo .card-content p {
     height : 2em;
 }
 

@@ -56,113 +56,116 @@
                 <a class="btn-floating  btn-large orange">
                     <i class="large material-icons">shopping_cart</i>
                 </a>
-                <form class="orange">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input  id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="last_name" type="text" class="validate">
-                            <label for="last_name">Last Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-                            <label for="disabled">Disabled</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <button type="button">close</button>
-                </form>
-            </div>			
+            </div>
 
 
-            <div class="row">
+            <div id="tarjetas" class="row">
                 <div id="presentacion" class="col s12 m12">
                     <div class="card blue-grey darken-1 z-depth-2">
                         <div class="card-content white-text">
                             <span class="card-title">Camisetas estampadas</span>
                             <p class="light">Cada día puedes comprar dos camisetas al increíble precio de 10€. Y si te has despistado
                                 podrás conseguir las camisetas del día anterior por solo 12€ cada una. Además te regalamos los gastos
-                                de envío si compras más de dos camisetas. Por cierto, usamos cookies, como todo el mundo. Te 
+                                de envío si compras más de dos camisetas. Por cierto, usamos cookies, como todo el mundo. Te
                                 avisamos por motivos legales.</p>
                         </div>
                         <div class="card-action clearfix">
                             <a href="#" class="right">Entendido</a>
                         </div>
                     </div>
-                </div>				
-
-                </main>
-
-
-            <div id="plantillaTarjetaArticulo" class="articulo card col s12 m6" style="display: none;">
-                <div class="card-image">
-                    <img src="" alt="imagen del artículo"
-                         width="400" height="200" class="responsive-img">
-                </div>
-                <div class="card-content">
-                    <span class="card-title"></span>
-                    <p>Todavía no has comprado ninguna camiseta de este modelo.</p>
-                </div>
-                <div class="card-action">
-                    <a href="#" data-accion="S">+S</a>
-                    <a href="#" data-accion="M">+M</a>
-                    <a href="#" data-accion="L">+L</a>
-                    <a href="#" data-accion="XL">+XL</a>
-                    <a href="#" data-accion="ELIMINAR" class="delete right">
-                        <i class="material-icons">delete</i>
-                    </a>
                 </div>
             </div>
+        </main>
 
-            <!--
+
+        <div id="plantillaTarjetaArticulo" class="tarjetaArticulo card col s12 m6" style="display: none;">
+            <div class="card-image">
+                <img src="" alt="imagen del artículo"
+                     width="400" height="200" class="responsive-img">
+            </div>
+            <div class="card-content">
+                <span class="card-title"></span>
+                <p>Todavía no has comprado ninguna camiseta de este modelo.</p>
+            </div>
+            <div class="card-action">
+                <a href="#" data-accion="S">+S</a>
+                <a href="#" data-accion="M">+M</a>
+                <a href="#" data-accion="L">+L</a>
+                <a href="#" data-accion="XL">+XL</a>
+                <a href="#" data-accion="ELIMINAR" class="delete right">
+                    <i class="material-icons">delete</i>
+                </a>
+            </div>
+        </div>
+
+        <div id="plantillaShoppingCartForm" class="shoppingCartForm orange clearfix" style="display: none;">
+            <form>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input  id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+                        <label for="disabled">Disabled</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <button type="button">close</button>
+            </form>
+        </div>
+
+        <!--
 generator: https://github.com/yeoman/generator-gulp-webapp/blob/master/docs/recipes/README.md
 bower install materialize & icons from googleapis
 
 -->
 
-            <!-- build:js scripts/vendor.js -->
-            <!-- bower:js -->
-            <script src="/bower_components/jquery/dist/jquery.js"></script>
-            <script src="/bower_components/materialize/bin/materialize.js"></script>
-            <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
-            <!-- endbower -->
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/materialize/bin/materialize.js"></script>
+        <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+        <!-- endbower -->
 
-            <!-- endbuild -->
-            <!-- build:js scripts/main.js -->
-            <script src="scripts/Articulo.js"></script>
-            <script src="scripts/Carrito.js"></script>
-            <script src="scripts/Catalogo.js"></script>
-            <script src="scripts/TarjetaArticuloCtrl.js"></script>
-            <script src="scripts/TarjetaDesechableCtrl.js"></script>
-            <script src="scripts/ShoppingCartCtrl.js"></script>
-            <script src="scripts/AppCtrl.js"></script>
-            <!-- endbuild -->
+        <!-- endbuild -->
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/Articulo.js"></script>
+        <script src="scripts/Carrito.js"></script>
+        <script src="scripts/Catalogo.js"></script>
+        <script src="scripts/TarjetaArticuloCtrl.js"></script>
+        <script src="scripts/TarjetaDesechableCtrl.js"></script>
+        <script src="scripts/ShoppingCartCtrl.js"></script>
+        <script src="scripts/AppCtrl.js"></script>
+        <!-- endbuild -->
 
-            <script>
-                $(document).ready(function() {
-                    var catalogo = new Catalogo();
-                    var carrito = new Carrito();
-                    var app = new AppCtrl(catalogo, carrito);
-                    app.inicializar();
-                    var cart = new ShoppingCartCtrl(carrito);
-                    cart.inicializar();
-                });
-            </script>
+        <script>
+            $(document).ready(function() {
+                var catalogo = new Catalogo();
+                var carrito = new Carrito();
+                var app = new AppCtrl(catalogo, carrito);
+                app.inicializar();
+                var cart = new ShoppingCartCtrl(carrito);
+                cart.inicializar();
+            });
+        </script>
 
-            </body>
-        </html>
+    </body>
+</html>

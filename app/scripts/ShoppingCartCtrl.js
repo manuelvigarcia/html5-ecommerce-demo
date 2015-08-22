@@ -1,17 +1,26 @@
 var ShoppingCartCtrl = function(carrito) {
     this.$elem = $('#carrito');
+
     this.carrito = carrito;
 };
 
+ShoppingCartCtrl.prototype.$form = null;
+
 ShoppingCartCtrl.prototype.inicializar = function() {
+    this.$form = $('#plantillaShoppingCartForm')
+        .clone()
+        .removeAttr('id')
+        .prependTo('body');
+
     this.$elem.find('a').click(function(evt) {
         evt.preventDefault();
         this.expandir();
     }.bind(this));
-    this.$elem.find('button').click(function(evt) {
+    this.$form.find('button').click(function(evt) {
         evt.preventDefault();
         this.compactar();
-    }.bind(this));    this.carrito.onRegistrarCompra(function(articulo) {
+    }.bind(this));    
+    this.carrito.onRegistrarCompra(function(articulo) {
         if (this.carrito.numeroArticulos() === 1) {
             this.mostrar();
         } else {
@@ -36,20 +45,28 @@ ShoppingCartCtrl.prototype.ocultar = function() {
 };
 
 ShoppingCartCtrl.prototype.actualizar = function() {
-    
+
 };
 
 ShoppingCartCtrl.prototype.expandir = function() {
     this.$elem.addClass('expandido');
     this.$elem.one('transitionend', function() {
-        $(this).find('a').addClass('expandido');
-        $(this).find('form').addClass('expandido');
-    });
+        var rect = this.$elem[0].getBoundingClientRect();
+        var scrollTop = $(document).scrollTop();
+        this.$form
+            .removeAttr('style')
+            .width(rect.width - 28)
+            .height(rect.height -28)
+            .css('top', scrollTop + rect.top)
+            .css('left', rect.left)
+            .show();
+        this.$elem.hide();
+    }.bind(this));
 };
 
 ShoppingCartCtrl.prototype.compactar = function() {
-    this.$elem.find('a').removeClass('expandido');
-    this.$elem.find('form').removeClass('expandido');
     this.$elem.removeClass('expandido');
+    this.$elem.show();
+    this.$form.hide();
 };
 

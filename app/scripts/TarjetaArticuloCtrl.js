@@ -47,7 +47,7 @@ TarjetaArticuloCtrl.prototype.actualizarTarjeta = function() {
     this.$elem.find('.card-content p')
         .fadeOut(function() {
             this.innerHTML = mensaje;
-        }).fadeIn();;
+        }).fadeIn();
 };
 
 TarjetaArticuloCtrl.prototype.eliminarDeCarrito = function() {
